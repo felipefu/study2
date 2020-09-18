@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+    study2:
+      image: maven
+      volumes:
+        - ../study2:/deploy
+      working_dir: /deploy
+      ports:
+        - 8080:8080
+      command: bash -c "mvn clean install && java -jar target/study2-0.0.1-SNAPSHOT.jar"
+      container_name: study
